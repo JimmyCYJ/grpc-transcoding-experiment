@@ -1,23 +1,24 @@
 # grpc-transcoding-experiment
 Test gRPC-JSON transcoder filter 
 
-Terminal ~/go/src/grpc_transcoder$ 
+Create gRPC service config and run gRPC server
+Terminal $GOPATH/src/grpc_transcoder$ 
 1. protoc -I/home/james/go/src/googleapis -I/usr/local/include -I helloworld/ --include_imports --include_source_info --descriptor_set_out=helloworld/helloworld.pb helloworld/helloworld.proto --go_out=plugins=grpc:helloworld
 
 2. go run grpc_service.go
 
 
-Terminal ~/go/src/istio.io/envoy$
+Terminal $GOPATH/src/istio.io/envoy$
 https://github.com/envoyproxy/envoy/blob/master/bazel/README.md
 bazel build //source/exe:envoy-static -c dbg
 
 
-Terminal ~/go/src/grpc_transcoder/envoy_config$
+Terminal $GOPATH/src/grpc_transcoder/envoy_config$
 1. ln -s /home/james/go/src/istio.io/envoy/bazel-bin/source/exe/envoy-static envoy-static
 2. sudo ./envoy-static -c envoy.conf 
 
 
-Terminal ~/go/src/grpc_transcoder$ 
+Terminal $GOPATH/src/grpc_transcoder$ 
 1. go run grpc_client.go 
 2018/01/15 22:56:00 could not greet: rpc error: code = FailedPrecondition desc = transport: received the unexpected content-type "text/plain"
 exit status 1
