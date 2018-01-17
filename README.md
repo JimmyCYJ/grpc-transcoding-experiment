@@ -6,8 +6,8 @@ Set up an experiment environment where a client, an Envoy proxy, and a gRPC back
 
 We can send HTTP JSON request using curl, or gRPC request using gRPC client, and compare the results.
 
-gRPC-JSON transcoder filter is described here. [[link](https://www.envoyproxy.io/docs/envoy/latest/configuration/http_filters/grpc_json_transcoder_filter "link")]
-gRPC-HTTP/JSON transcoding library is here. [[link](https://github.com/grpc-ecosystem/grpc-httpjson-transcoding "link")]
+gRPC-JSON transcoder filter is described here [[link](https://www.envoyproxy.io/docs/envoy/latest/configuration/http_filters/grpc_json_transcoder_filter "link")].
+gRPC-HTTP/JSON transcoding library is here [[link](https://github.com/grpc-ecosystem/grpc-httpjson-transcoding "link")].
 
 # Experiment Setup
 - Install packages
